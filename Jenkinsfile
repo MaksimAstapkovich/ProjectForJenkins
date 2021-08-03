@@ -2,7 +2,8 @@ pipeline {
     agent any 
     stages {
         stage('Build') {
-	    agent { docker 'docker:latest'
+            agent { 
+                docker 'docker:latest'
 	    }
             steps {
                 sh "./script1.sh" 
