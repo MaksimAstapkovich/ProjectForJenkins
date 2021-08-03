@@ -1,4 +1,7 @@
 #!/bin/bash
 
-echo Hello World 2
-echo 'Maybe 750$' >> ./Data.txt
+
+docker run -d -p 5000:5000 Task
+curl localhost:5000
+docker container stop $(docker container ls -aq)
+docker container prune -f

@@ -1,5 +1,6 @@
 #!/bin/bash
 
-echo Hello World aaa
-cat ./Data.txt | sed 's/200/500/' > ./Data.txt
-
+cd flask-examples
+python3 -m venv venv
+cd ..
+docker build -t Task .
