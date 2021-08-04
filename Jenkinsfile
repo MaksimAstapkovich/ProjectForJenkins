@@ -6,7 +6,7 @@ pipeline {
                 docker 'python3:latest'
 	    }
             steps {
-                python --version 
+                python "--version" 
             }
         }
         stage('Test') { 
