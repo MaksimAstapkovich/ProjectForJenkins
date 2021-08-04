@@ -3,10 +3,10 @@ pipeline {
     stages {
         stage('Build') {
             agent { 
-                docker 'docker:latest'
+                docker 'python3:latest'
 	    }
             steps {
-                sh "./script1.sh" 
+                python --version 
             }
         }
         stage('Test') { 
