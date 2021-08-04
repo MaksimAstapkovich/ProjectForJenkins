@@ -3,19 +3,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "python --version" 
+                sh "echo 1" 
             }
         }
         stage('Test') { 
             agent any
             steps {
-                sh "./script2.sh"
+                sh "echo 2"
             }
         }
         stage('Deploy') {
             agent any 
             steps {
-                sh "./script3.sh"
+                sh "echo 3"
             }
         }
     }
