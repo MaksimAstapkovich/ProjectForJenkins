@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "docker build -t ass ." 
+                sh "docker build -t ass ."
+		sh "tree" 
             }
         }
         stage('Test') { 
