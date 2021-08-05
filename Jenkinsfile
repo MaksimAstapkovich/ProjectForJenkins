@@ -10,7 +10,9 @@ pipeline {
         stage('Test') { 
             steps {
                 sh "docker run -d -p 3333:5000 ass"
-		sh "curl localhost:3333"
+		sh "docker ps"
+		sh "echo $MY_IP_I"
+		sh "curl ${MY_IP_I}:3333"
             }
         }
         stage('Deploy') {
