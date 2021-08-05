@@ -2,7 +2,7 @@ FROM python
 
 USER root
 RUN mkdir /home/flask_examples/
-COPY ./flask-examples/ /home/flask_examples/
+COPY ./flask_examples/ /home/flask_examples/
 WORKDIR /home/flask_examples/
 #RUN python3 -m venv venv && \
 #	. venv/bin/activate && \
