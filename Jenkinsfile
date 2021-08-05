@@ -19,7 +19,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "echo 3"
+	        withCredentials([usernamePassword(credentialsId: "max_dh", usernameVariable: "USERNAME", passwordVariable: "PASSWORD")]) {
+                sh """docker login -u $USERNAME -p $PASSWORD"""
+		}
+		sh '''docker push ass:latest'''
             }
         }
     }
