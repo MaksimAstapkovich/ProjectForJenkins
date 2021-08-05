@@ -9,6 +9,6 @@ WORKDIR /home/flask-examples/
 #	pip install -r requirements.txt && \
 #	cd hello/ && \
 #	flask run
-RUN pip install -r requirements.txt
+RUN pip install -r /home/flask-examples/requirements.txt
 CMD [ "python", "/home/flask-examples/hello/app.py" ] 
 EXPOSE 5000
