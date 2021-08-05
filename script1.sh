@@ -1,9 +1,11 @@
 #!/bin/bash
 
-apk add python3
-cd flask-examples
-python3 -m venv venv
-cd ..
-docker build -t Task .
-docker run -d -p 5000:5000 Task &
-curl localhost:5000
+content=$(curl ${MY_IP_I}:3333)
+res=$(echo $content | grep World)
+if [[ $res ]]
+then
+echo "Tests passed"
+else
+docker rm -f $(docker ps | grep ass | cut -d" " -f1)
+exit 1
+fi
