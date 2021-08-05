@@ -13,7 +13,6 @@ pipeline {
 		sh "docker ps"
 		sh "echo $MY_IP_I"
 		sh "curl ${MY_IP_I}:3333"
-		sh "./script1.sh"
 		sh "docker rm -f $(docker ps | grep ass | cut -d" " -f1)"
             }
         }
