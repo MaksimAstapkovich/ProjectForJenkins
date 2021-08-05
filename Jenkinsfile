@@ -1,16 +1,15 @@
 pipeline {
-    agent { 
-        docker 'python'
-    }
+    agent any
     stages {
         stage('Build') {
             steps {
-                sh "python --version" 
+                sh "docker build -t ass ." 
             }
         }
         stage('Test') { 
             steps {
-                sh "echo 2"
+                sh "docker run -d -p 3333:5000 ass"
+		sh "curl localhost:3333"
             }
         }
         stage('Deploy') {
